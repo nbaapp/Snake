@@ -1,2 +1,2 @@
-# Snake
-snake for unity
+# 3D Snake
+snake in 3 dimensions for unity
