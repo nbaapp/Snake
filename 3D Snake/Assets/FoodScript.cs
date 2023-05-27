@@ -22,6 +22,5 @@ public class FoodScript : MonoBehaviour
         logic.addScore(1);
         logic.spawnFood();
         Destroy(gameObject);
-
-    }
+        logic.spawnSegment();    }
 }

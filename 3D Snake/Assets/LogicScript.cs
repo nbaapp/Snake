@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class LogicScript : MonoBehaviour
 {
     public int score;
+    public Transform snake;
     public Text scoreText;
     public GameObject food;
+    public GameObject segment;
+    public float offset = 1.5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnFood();
     }
 
     // Update is called once per frame
@@ -29,6 +32,12 @@ public class LogicScript : MonoBehaviour
 
     public void spawnFood()
     {
-        Instantiate(food, new Vector3(Random.Range(-20, 20), Random.Range(-2, 20), Random.Range(20, 20)), transform.rotation);
+        Instantiate(food, new Vector3(Random.Range(-20, 20), Random.Range(-2, 10), Random.Range(-11, 20)), Quaternion.identity); ;
+    }
+
+    public void spawnSegment()
+    {
+        Instantiate(segment, snake.transform.position - snake.transform.forward * offset, Quaternion.identity, snake);
+        offset += 1.5f;
     }
 }
